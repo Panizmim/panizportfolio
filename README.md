@@ -6,8 +6,12 @@ Next.js (App Router) + TypeScript + Tailwind. Static, fast, SEO-ready, built to 
 
 ```bash
 npm install
-npm run dev
+npm run dev     # http://localhost:3300
 ```
+
+Port 3300 is pinned in `package.json` and `.claude/launch.json` so this project
+never collides with the other Next.js apps on this machine (Dey House uses 3000,
+viizhstudio uses 3200). Change both files together if you move it.
 
 ## Editing content
 
