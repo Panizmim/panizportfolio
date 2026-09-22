@@ -5,13 +5,13 @@
 
 export const site = {
   name: "Paniz Molamohamad",
-  role: "Product Designer · UX / UI · Web & Mobile",
+  role: "Product Designer",
   // Used for <title>, Open Graph and structured data.
   tagline: "Product Designer bridging architecture and digital product design.",
   intro:
-    "Product Designer with a background in architecture. I turn complex user needs into scalable, accessible interfaces — pairing UX research and UI design with AI-assisted development to take products from problem to shipped, working versions.",
+    "Product Designer with a background in architecture. I turn complex user needs into scalable, accessible interfaces, pairing UX research and UI design with AI-assisted development to take products from problem to shipped, working versions.",
   about:
-    "I'm a product designer with a background in architecture. That training taught me to think in systems and structure — to see how parts fit into a whole — which is exactly how I approach digital products. I work across research, UI, and increasingly the build itself, using AI-assisted development to ship working products, not just mockups. I care about interfaces that are as structurally sound as they are clear to use.",
+    "I'm a product designer with a background in architecture. That training taught me to think in systems and structure, to see how parts fit into a whole, which is exactly how I approach digital products. I work across research, UI, and increasingly the build itself, using AI-assisted development to ship working products, not just mockups. I care about interfaces that are as structurally sound as they are clear to use.",
   // Set this to your real domain before deploying — it drives canonical + OG URLs.
   url: "https://panizmolamohamad.com",
   email: "Panizmolamohamad@gmail.com",

@@ -76,29 +76,29 @@ export const projects: Project[] = [
     summary:
       "Designed and shipped a live bilingual (RTL) website for a Tehran art café-gallery, covering exhibitions, events, workshops, café menu, and artist collaboration.",
     highlight:
-      "Built an online studio-reservation flow with room listings, hourly pricing, and user accounts — owning the product from design through to a deployed, operational site.",
+      "Built an online studio-reservation flow with room listings, hourly pricing, and user accounts, owning the product from design through to a deployed, operational site.",
     liveUrl: "https://www.deyhouse.com",
     cover: {
       src: "/images/projects/dey-house-cover.jpg",
-      alt: "Dey House homepage — full-bleed photograph of the café-gallery with Persian signage.",
+      alt: "Dey House homepage: full-bleed photograph of the café-gallery with Persian signage.",
       width: 1600,
       height: 1000,
     },
     caseStudy: {
       intro:
-        "Dey House is an art café-gallery in Tehran. I designed and shipped the whole product: a bilingual, right-to-left site covering exhibitions, events, workshops, the café menu and artist collaboration — plus an online studio-reservation flow with room listings, hourly pricing and user accounts.",
+        "Dey House is an art café-gallery in Tehran. I designed and shipped the whole product: a bilingual, right-to-left site covering exhibitions, events, workshops, the café menu and artist collaboration, plus an online studio-reservation flow with room listings, hourly pricing and user accounts.",
       sections: [
         {
           heading: "Studio reservation",
           body: [
             "The core of the product. Each rehearsal studio gets its own page with a photo set, hourly pricing, amenities, a location map, and a date-and-time picker that writes straight to a real booking. Visitors sign in to manage what they have reserved.",
-            "Getting this right meant designing for a decision, not just a page: what the room looks like, what it costs per hour, what is in it, and whether it is free — all resolvable without leaving the screen.",
+            "Getting this right meant designing for a decision, not just a page: what the room looks like, what it costs per hour, what is in it, and whether it is free, all resolvable without leaving the screen.",
           ],
           images: [
             {
               src: "/images/projects/dey-house-booking.jpg",
-              alt: "Dey House studio booking page — room photos, hourly price, amenities list, booking form and a location map.",
-              caption: "Studio detail — photos, hourly pricing, amenities and booking",
+              alt: "Dey House studio booking page: room photos, hourly price, amenities list, booking form and a location map.",
+              caption: "Studio detail: photos, hourly pricing, amenities and booking",
               width: 1500,
               height: 2125,
             },
@@ -112,8 +112,8 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/dey-house-gallery.jpg",
-              alt: "Dey House gallery page — a full-width exhibition photograph above curatorial text and an exhibition archive.",
-              caption: "Gallery — curatorial text and the exhibition archive",
+              alt: "Dey House gallery page: a full-width exhibition photograph above curatorial text and an exhibition archive.",
+              caption: "Gallery: curatorial text and the exhibition archive",
               width: 1500,
               height: 2237,
             },
@@ -128,7 +128,7 @@ export const projects: Project[] = [
             {
               src: "/images/projects/dey-house-events.jpg",
               alt: "Dey House events listing with poster cards and a sidebar of event-type filters.",
-              caption: "Events — poster cards with type and availability filters",
+              caption: "Events: poster cards with type and availability filters",
               width: 1500,
               height: 1177,
             },
@@ -142,8 +142,8 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/dey-house-cafe.jpg",
-              alt: "Dey House café menu — collapsible categories with a category index down the side.",
-              caption: "Café menu — collapsible categories",
+              alt: "Dey House café menu: collapsible categories with a category index down the side.",
+              caption: "Café menu: collapsible categories",
               width: 1500,
               height: 1542,
             },
@@ -152,13 +152,13 @@ export const projects: Project[] = [
         {
           heading: "Artist collaboration",
           body: [
-            "Artists apply to work with the space through a long submission form — contact details, discipline, portfolio upload and sample works. I broke it into labelled steps with explicit file guidance, because the failure mode for a form this long is abandonment.",
+            "Artists apply to work with the space through a long submission form: contact details, discipline, portfolio upload and sample works. I broke it into labelled steps with explicit file guidance, because the failure mode for a form this long is abandonment.",
           ],
           images: [
             {
               src: "/images/projects/dey-house-artist.jpg",
-              alt: "Dey House artist collaboration form — grouped fields, discipline radio options and portfolio upload areas.",
-              caption: "Artist submission — grouped fields and portfolio uploads",
+              alt: "Dey House artist collaboration form: grouped fields, discipline radio options and portfolio upload areas.",
+              caption: "Artist submission: grouped fields and portfolio uploads",
               width: 1500,
               height: 2533,
             },
@@ -185,28 +185,28 @@ export const projects: Project[] = [
     summary:
       "Designed and built a bilingual (English/Persian) studio website with a service catalog and a CMS-backed project portfolio.",
     highlight:
-      "Owned the full flow — information architecture, UI, and a content-managed, responsive front end.",
+      "Owned the full flow: information architecture, UI, and a content-managed, responsive front end.",
     liveUrl: "https://logstudio-tawny.vercel.app",
     cover: {
       src: "/images/projects/log-studio-cover.png",
-      alt: "LOG Studio homepage — the LOG Studio wordmark in blue, surrounded by scattered client names.",
+      alt: "LOG Studio homepage: the LOG Studio wordmark in blue, surrounded by scattered client names.",
       width: 1600,
       height: 1000,
     },
     caseStudy: {
       intro:
-        "LOG Studio is a brand and visual studio in Tehran. I designed and built their bilingual site — English and Persian — around two jobs: explain what the studio does, and let the work speak. The project portfolio is content-managed, so the studio adds new work without touching code.",
+        "LOG Studio is a brand and visual studio in Tehran. I designed and built their bilingual site, English and Persian, around two jobs: explain what the studio does, and let the work speak. The project portfolio is content-managed, so the studio adds new work without touching code.",
       sections: [
         {
           heading: "Homepage",
           body: [
-            "The landing is a single quiet wordmark ringed by client names — the studio's reputation stated before any pitch. Scrolling moves through the showreel, the studio's story, the client roster, and then the service catalog.",
+            "The landing is a single quiet wordmark ringed by client names, the studio's reputation stated before any pitch. Scrolling moves through the showreel, the studio's story, the client roster, and then the service catalog.",
           ],
           images: [
             {
               src: "/images/projects/log-studio-home.jpg",
-              alt: "LOG Studio homepage in full — wordmark hero, showreel, studio intro, client logos and the services section.",
-              caption: "Homepage — hero through to the service catalog",
+              alt: "LOG Studio homepage in full: wordmark hero, showreel, studio intro, client logos and the services section.",
+              caption: "Homepage: hero through to the service catalog",
               width: 1500,
               height: 6293,
             },
@@ -215,13 +215,13 @@ export const projects: Project[] = [
         {
           heading: "Service catalog",
           body: [
-            "Five services — visual production, strategy and content, event design, visual identity, and web design and development. A sticky index on the left tracks which service you are reading, so a long section stays navigable.",
+            "Five services: visual production, strategy and content, event design, visual identity, and web design and development. A sticky index on the left tracks which service you are reading, so a long section stays navigable.",
           ],
           images: [
             {
               src: "/images/projects/log-studio-services.jpg",
               alt: "LOG Studio services section on a deep blue gradient, with a sticky service index beside stacked service cards.",
-              caption: "Services — sticky index against stacked cards",
+              caption: "Services: sticky index against stacked cards",
               width: 1500,
               height: 2784,
             },
@@ -235,8 +235,8 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/log-studio-project.jpg",
-              alt: "A LOG Studio project page — title, service tags and credits above a mixed-size black-and-white photo grid.",
-              caption: "Project page — credits above a content-managed photo grid",
+              alt: "A LOG Studio project page: title, service tags and credits above a mixed-size black-and-white photo grid.",
+              caption: "Project page: credits above a content-managed photo grid",
               width: 1400,
               height: 2800,
             },
@@ -245,13 +245,13 @@ export const projects: Project[] = [
         {
           heading: "About",
           body: [
-            "The studio's story, the people behind the work, and the numbers — published projects, disciplines, years working — closing on a single clear call to action.",
+            "The studio's story, the people behind the work, and the numbers: published projects, disciplines, years working. It closes on a single clear call to action.",
           ],
           images: [
             {
               src: "/images/projects/log-studio-about.jpg",
-              alt: "LOG Studio about page — studio story, a row of team member cards, headline statistics and a contact call to action.",
-              caption: "About — story, team, numbers and a single CTA",
+              alt: "LOG Studio about page: studio story, a row of team member cards, headline statistics and a contact call to action.",
+              caption: "About: story, team, numbers and a single CTA",
               width: 1500,
               height: 1743,
             },
@@ -273,7 +273,7 @@ export const projects: Project[] = [
     year: "2024",
     status: "concept",
     context: "Team of 5",
-    role: "Product Designer — UX/UI & Interaction Design",
+    role: "Product Designer, UX/UI & Interaction Design",
     stack: ["Figma", "UX Research", "Interaction Design"],
     summary:
       "A web-based platform that simplifies discovering, comparing, and booking coworking spaces for freelancers, remote workers, and small teams.",
@@ -281,7 +281,7 @@ export const projects: Project[] = [
       "In a team of five I ran competitor analysis, built the initial wireframes, and designed the search experience, the authentication flow, and the booking-management dashboard.",
     cover: {
       src: "/images/projects/worknest-cover.jpg",
-      alt: "Worknest homepage — hero with a workspace-type selector and a location and date search bar.",
+      alt: "Worknest homepage: hero with a workspace-type selector and a location and date search bar.",
       width: 1800,
       height: 1124,
     },
@@ -294,7 +294,7 @@ export const projects: Project[] = [
           body: ["Users struggle to efficiently find and book suitable coworking spaces due to:"],
           bullets: [
             "Difficulty comparing multiple options",
-            "Unclear information — pricing, amenities, availability",
+            "Unclear information: pricing, amenities, availability",
             "Complex booking processes",
             "Limited control over reservations",
           ],
@@ -317,8 +317,8 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/worknest-home.jpg",
-              alt: "Worknest homepage, full length — hero search, popular spaces, hot desk and meeting room sections.",
-              caption: "Homepage — search, category navigation and popular spaces",
+              alt: "Worknest homepage, full length: hero search, popular spaces, hot desk and meeting room sections.",
+              caption: "Homepage: search, category navigation and popular spaces",
               width: 603,
               height: 1800,
             },
@@ -327,7 +327,7 @@ export const projects: Project[] = [
         {
           heading: "Category-based navigation",
           body: [
-            "Users switch between workspace types — Hot Desk, Dedicated Desk, Meeting Room, Private Office — to narrow down options quickly based on what they actually need.",
+            "Users switch between workspace types: Hot Desk, Dedicated Desk, Meeting Room and Private Office. That narrows down the options quickly, based on what they actually need.",
           ],
         },
         {
@@ -375,7 +375,7 @@ export const projects: Project[] = [
             {
               src: "/images/projects/worknest-dashboard.jpg",
               alt: "Booking dashboard listing previous bookings with completed, pending and cancelled statuses.",
-              caption: "Booking management — view, modify and cancel reservations",
+              caption: "Booking management: view, modify and cancel reservations",
               width: 1800,
               height: 1280,
             },
@@ -384,11 +384,11 @@ export const projects: Project[] = [
         {
           heading: "Design decisions",
           bullets: [
-            "Reducing decision friction — minimise steps so booking stays fast and straightforward.",
-            "Designing for quick comparison — structure information so users can evaluate several options without extra navigation.",
-            "Enhancing user control — booking management and cancellation increase flexibility and confidence.",
-            "Guiding user flow — layout and visual hierarchy lead users naturally from search to booking.",
-            "Minimising cognitive load — a clean layout with enough whitespace helps users focus.",
+            "Reducing decision friction: minimise steps so booking stays fast and straightforward.",
+            "Designing for quick comparison: structure information so users can evaluate several options without extra navigation.",
+            "Enhancing user control: booking management and cancellation increase flexibility and confidence.",
+            "Guiding user flow: layout and visual hierarchy lead users naturally from search to booking.",
+            "Minimising cognitive load: a clean layout with enough whitespace helps users focus.",
           ],
         },
         {
@@ -412,10 +412,10 @@ export const projects: Project[] = [
     summary:
       "A concept app that lets people capture ideas in multiple formats and discover inspiration in one place.",
     highlight:
-      "A full UX research process — semi-structured interviews and an 80-participant survey, carried through personas, journey mapping, red routes, IA and low-fidelity wireframes.",
+      "A full UX research process: semi-structured interviews and an 80-participant survey, carried through personas, journey mapping, red routes, IA and low-fidelity wireframes.",
     cover: {
       src: "/images/projects/idea-soup-cover.jpg",
-      alt: "Three Idea Soup low-fidelity wireframe screens — capture options, interest picker and feature overview.",
+      alt: "Three Idea Soup low-fidelity wireframe screens: capture options, interest picker and feature overview.",
       width: 1800,
       height: 1126,
     },
@@ -447,7 +447,7 @@ export const projects: Project[] = [
         {
           heading: "User interviews",
           body: [
-            "I ran semi-structured interviews to understand how people capture, revisit and share ideas in daily life — surfacing behaviours, pain points and unmet needs around idea management.",
+            "I ran semi-structured interviews to understand how people capture, revisit and share ideas in daily life, surfacing behaviours, pain points and unmet needs around idea management.",
           ],
           images: [
             {
@@ -491,7 +491,7 @@ export const projects: Project[] = [
             {
               src: "/images/projects/idea-soup-personas.jpg",
               alt: "Persona boards covering personal info, personality sliders, behaviours, wants and needs, and pain points.",
-              caption: "Personas — behaviours, wants and needs, pain points",
+              caption: "Personas: behaviours, wants and needs, pain points",
               width: 1800,
               height: 680,
             },
@@ -506,14 +506,14 @@ export const projects: Project[] = [
             {
               src: "/images/projects/idea-soup-journey.jpg",
               alt: "User journey map plotting emotion across the stages of capturing and revisiting an idea.",
-              caption: "Journey map — persona one",
+              caption: "Journey map: persona one",
               width: 1800,
               height: 973,
             },
             {
               src: "/images/projects/idea-soup-journey-2.jpg",
               alt: "Second user journey map, tracking the other persona through the same stages.",
-              caption: "Journey map — persona two",
+              caption: "Journey map: persona two",
               width: 1800,
               height: 975,
             },
@@ -528,7 +528,7 @@ export const projects: Project[] = [
             {
               src: "/images/projects/idea-soup-red-routes.jpg",
               alt: "Red route matrix plotting task frequency against how many users perform each task.",
-              caption: "Red routes — frequency against reach",
+              caption: "Red routes: frequency against reach",
               width: 1800,
               height: 1656,
             },
@@ -563,11 +563,11 @@ export const projects: Project[] = [
         {
           heading: "Key learnings",
           bullets: [
-            "Idea capture is not the main problem — users need a system to revisit ideas, not just somewhere to save them.",
-            "Memory-based ideation is common — many users rely on memory rather than writing ideas down, which leads to idea loss.",
-            "Sharing and privacy must coexist — users want feedback on some ideas while keeping others private.",
-            "Simplicity increases idea capture — reducing friction is critical to encouraging users to save ideas.",
-            "Inspiration and storage should be combined — users don't want separate tools for discovery and saving.",
+            "Idea capture is not the main problem: users need a system to revisit ideas, not just somewhere to save them.",
+            "Memory-based ideation is common: many users rely on memory rather than writing ideas down, which leads to idea loss.",
+            "Sharing and privacy must coexist: users want feedback on some ideas while keeping others private.",
+            "Simplicity increases idea capture: reducing friction is critical to encouraging users to save ideas.",
+            "Inspiration and storage should be combined: users don't want separate tools for discovery and saving.",
           ],
         },
       ],

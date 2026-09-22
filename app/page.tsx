@@ -15,7 +15,7 @@ export default function HomePage() {
       <Shell as="section" className="pb-20 pt-20 sm:pt-28 lg:pb-24 lg:pt-32">
         {/* Two-tone opener: the name in accent, the positioning in ink. */}
         <p className="max-w-4xl font-display text-[clamp(1.75rem,4.6vw,3.25rem)] font-bold leading-[1.12] tracking-tight">
-          <SplitWords text={`I'm ${site.name} —`} className="text-accent" />
+          <SplitWords text={`I'm ${site.name},`} className="text-accent" />
           <SplitWords text={site.role} delay={200} />
         </p>
 

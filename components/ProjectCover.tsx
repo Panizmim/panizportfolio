@@ -20,7 +20,7 @@ export function ProjectCover({
   interactive?: boolean;
 }) {
   return (
-    <div className="relative aspect-[8/5] w-full overflow-hidden rounded-sm border border-rule bg-rule/25">
+    <div className="relative aspect-[8/5] w-full overflow-hidden border border-rule bg-rule/25">
       {image ? (
         <Image
           src={image.src}

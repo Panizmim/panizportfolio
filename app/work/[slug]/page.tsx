@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const project = getProject(slug);
   if (!project) return {};
 
-  const title = `${project.title} — ${project.subtitle}`;
+  const title = `${project.title} · ${project.subtitle}`;
   return {
     title,
     description: project.summary,
