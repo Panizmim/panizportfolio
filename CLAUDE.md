@@ -184,7 +184,16 @@ are in Persian inside English case-study copy — that is known, not a bug.
    if set, else the Vercel project's production domain, else localhost. Set the
    env var only once a bought domain points at the project.
 3. No Open Graph image exists yet.
-4. No git remote. `gh` is not installed on this machine.
+4. `gh` is not installed on this machine, so GitHub work goes through plain
+   `git`. The remote is `github.com/Panizmim/panizportfolio`, and the Vercel
+   project `panizportfolio` builds `main` on every push. Live at
+   https://panizportfolio.vercel.app.
+5. **Vercel refuses to publish a Next.js release with a known CVE.** The build
+   finishes, then the deploy step stops with "Vulnerable version of Next.js
+   detected" and the deployment goes to ERROR, so a green local build says
+   nothing about this. The fix is to move to the patched release on the same
+   line (`npm view next dist-tags` lists it under `backport`), not to change
+   anything in the project.
 
 ## Language
 
