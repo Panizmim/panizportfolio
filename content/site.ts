@@ -17,6 +17,11 @@ export const site = {
   email: "Panizmolamohamad@gmail.com",
   /** Shown in the footer beside the viewer's local time. */
   location: "Tehran",
+  /** Square portrait beside the hero heading. Swap the file to change it. */
+  portrait: {
+    src: "/images/paniz-portrait.jpg",
+    alt: "Paniz Molamohamad",
+  },
   /**
    * CV, opened in a new tab from the nav.
    *

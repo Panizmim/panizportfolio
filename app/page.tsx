@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
 import { Shell } from "@/components/Shell";
@@ -13,11 +14,31 @@ export default function HomePage() {
     <>
       {/* ---------------------------------------------------------------- Hero */}
       <Shell as="section" className="pb-20 pt-20 sm:pt-28 lg:pb-24 lg:pt-32">
-        {/* Two-tone opener: the name in accent, the positioning in ink. */}
-        <p className="max-w-4xl font-display text-[clamp(1.75rem,4.6vw,3.25rem)] font-bold leading-[1.12] tracking-tight">
-          <SplitWords text={`I'm ${site.name},`} className="text-accent" />
-          <SplitWords text={site.role} delay={200} />
-        </p>
+        {/* Portrait beside the opener; the heading stacks name over role. */}
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8 lg:gap-10">
+          <Reveal className="shrink-0">
+            <Image
+              src={site.portrait.src}
+              alt={site.portrait.alt}
+              width={600}
+              height={600}
+              priority
+              className="h-28 w-28 border border-rule object-cover sm:h-36 sm:w-36 lg:h-44 lg:w-44"
+            />
+          </Reveal>
+
+          <h1 className="font-display text-[clamp(1.75rem,4.4vw,3.25rem)] font-bold leading-[1.12] tracking-tight">
+            {/* Line one: "I'm" stays in ink, the name carries the accent. */}
+            <span className="block">
+              <SplitWords text="I'm" />
+              <SplitWords text={site.name} className="text-accent" delay={70} />
+            </span>
+            {/* Line two: the role. */}
+            <span className="block">
+              <SplitWords text={site.role} delay={260} />
+            </span>
+          </h1>
+        </div>
 
         <Reveal delay={430} className="mt-8 max-w-2xl" as="p">
           <span className="text-base leading-relaxed text-muted sm:text-lg">
