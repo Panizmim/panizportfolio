@@ -5,7 +5,19 @@ import type { Config } from "tailwindcss";
  * warm white paper, near-black ink, one persimmon accent, hairline rules.
  */
 const config: Config = {
-  darkMode: "media",
+  /**
+   * Matches the two states in globals.css: the system preference by default,
+   * an explicit `data-theme` from the header toggle when there is one. Nothing
+   * uses a `dark:` utility today, but if one is ever added it has to follow the
+   * toggle rather than quietly disagreeing with it.
+   */
+  darkMode: [
+    "variant",
+    [
+      '@media (prefers-color-scheme: dark) { &:not([data-theme="light"] *) }',
+      '&:is([data-theme="dark"] *)',
+    ],
+  ],
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./content/**/*.{ts,tsx}"],
   theme: {
     extend: {
@@ -28,9 +40,6 @@ const config: Config = {
         // Tailwind's defaults for every display heading in one place.
         tight: "-0.012em",
         tightest: "-0.022em",
-      },
-      maxWidth: {
-        shell: "88rem",
       },
     },
   },

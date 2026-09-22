@@ -18,8 +18,14 @@ export type CaseStudySection = {
   body?: string[];
   /** Optional bullet list rendered under the paragraphs. */
   bullets?: string[];
-  /** Optional Figma frames / screenshots for this section. */
+  /** Optional frames / screenshots for this section, stacked full width. */
   images?: ProjectImage[];
+  /**
+   * Optional row of phone screens, shown side by side with no frame behind
+   * them. Use this for a handful of narrow captures that read as a sequence;
+   * anything wide belongs in `images`.
+   */
+  screens?: ProjectImage[];
 };
 
 export type ProjectImage = {
@@ -72,21 +78,21 @@ export const projects: Project[] = [
     status: "live",
     context: "Designed & Built",
     role: "Product Designer & Builder",
-    stack: ["Figma", "Next.js", "Supabase", "AI-assisted"],
+    stack: ["Next.js", "Supabase", "AI-assisted"],
     summary:
       "Designed and shipped a live bilingual (RTL) website for a Tehran art café-gallery, covering exhibitions, events, workshops, café menu, and artist collaboration.",
     highlight:
       "Built an online studio-reservation flow with room listings, hourly pricing, and user accounts, owning the product from design through to a deployed, operational site.",
     liveUrl: "https://www.deyhouse.com",
     cover: {
-      src: "/images/projects/dey-house-cover.jpg",
-      alt: "Dey House homepage: full-bleed photograph of the café-gallery with Persian signage.",
-      width: 1600,
-      height: 1000,
+      src: "/images/projects/dey-house-home.jpg",
+      alt: "Dey House home page: a full-bleed, motion-blurred photograph of people sitting in the café, with a handwritten Persian line across the middle.",
+      width: 1800,
+      height: 1034,
     },
     caseStudy: {
       intro:
-        "Dey House is an art café-gallery in Tehran. I designed and shipped the whole product: a bilingual, right-to-left site covering exhibitions, events, workshops, the café menu and artist collaboration, plus an online studio-reservation flow with room listings, hourly pricing and user accounts.",
+        "Dey House is a cultural space in Tehran that brings together an art gallery, café, and theater studios. I designed and shipped its website, enabling users to explore and book theater studios, view the café menu and upcoming events, discover exhibitions, and submit their CV and portfolio for potential gallery collaborations.",
       sections: [
         {
           heading: "Studio reservation",
@@ -101,6 +107,13 @@ export const projects: Project[] = [
               caption: "Studio detail: photos, hourly pricing, amenities and booking",
               width: 1500,
               height: 2125,
+            },
+            {
+              src: "/images/projects/dey-house-booking-calendar.jpg",
+              alt: "Dey House date and time picker, open over a studio page: two Persian calendar months side by side, with start and end time selects beneath and a confirm button.",
+              caption: "Picking a slot: two months at a time, then a start and end hour",
+              width: 1800,
+              height: 1079,
             },
           ],
         },
@@ -148,6 +161,36 @@ export const projects: Project[] = [
               height: 1542,
             },
           ],
+          screens: [
+            {
+              src: "/images/projects/dey-house-menu-home.jpg",
+              alt: "Dey House home page on a phone: a full-bleed photograph of the café with a Persian line of type across it.",
+              caption: "Home",
+              width: 414,
+              height: 896,
+            },
+            {
+              src: "/images/projects/dey-house-menu-categories.jpg",
+              alt: "The café menu on a phone: a short list of house rules, then menu categories collapsed one under another.",
+              caption: "Menu categories, collapsed",
+              width: 414,
+              height: 896,
+            },
+            {
+              src: "/images/projects/dey-house-menu-breakfast.jpg",
+              alt: "The breakfast category opened on a phone: each dish with its ingredients, its price and a small photograph.",
+              caption: "A category opened, with prices",
+              width: 414,
+              height: 896,
+            },
+            {
+              src: "/images/projects/dey-house-menu-dish.jpg",
+              alt: "A single dish opened full screen on a phone: a large photograph above its name, ingredients and price.",
+              caption: "One dish, full screen",
+              width: 414,
+              height: 896,
+            },
+          ],
         },
         {
           heading: "Artist collaboration",
@@ -165,9 +208,24 @@ export const projects: Project[] = [
           ],
         },
         {
+          heading: "Admin panel",
+          body: [
+            "The team runs the site themselves. Exhibitions, events, workshops, the café menu and the incoming collaboration and contact requests are all edited from one dashboard, so nothing on the public site needs a developer to change.",
+          ],
+          images: [
+            {
+              src: "/images/projects/dey-house-admin.jpg",
+              alt: "Dey House admin dashboard on a laptop: a sidebar of sections down one side, a table of exhibitions with their status, and an open form for editing one exhibition's title, artist, description, start and end dates, status and cover image.",
+              caption: "Admin panel: editing an exhibition, with its title, artist, dates, status and cover image",
+              width: 1536,
+              height: 1024,
+            },
+          ],
+        },
+        {
           heading: "Building it",
           body: [
-            "Designed in Figma, built with Next.js and Supabase using AI-assisted development, and deployed. The whole interface is right-to-left Persian, which shaped the layout decisions throughout rather than being retrofitted at the end.",
+            "Designed and built with Next.js and Supabase using AI-assisted development, and deployed. The whole interface is right-to-left Persian, which shaped the layout decisions throughout rather than being retrofitted at the end.",
           ],
         },
       ],
@@ -181,21 +239,21 @@ export const projects: Project[] = [
     status: "live",
     context: "Designed & Built",
     role: "Product Designer & Builder",
-    stack: ["Figma", "Next.js", "Supabase", "AI-assisted"],
+    stack: ["Next.js", "Supabase", "AI-assisted"],
     summary:
       "Designed and built a bilingual (English/Persian) studio website with a service catalog and a CMS-backed project portfolio.",
     highlight:
       "Owned the full flow: information architecture, UI, and a content-managed, responsive front end.",
     liveUrl: "https://logstudio-tawny.vercel.app",
     cover: {
-      src: "/images/projects/log-studio-cover.png",
-      alt: "LOG Studio homepage: the LOG Studio wordmark in blue, surrounded by scattered client names.",
-      width: 1600,
-      height: 1000,
+      src: "/images/projects/log-studio-hero.jpg",
+      alt: "The LOG Studio homepage: the wordmark set in blue in the middle of an otherwise empty white page, with client names drifting around it in pale grey.",
+      width: 1500,
+      height: 869,
     },
     caseStudy: {
       intro:
-        "LOG Studio is a brand and visual studio in Tehran. I designed and built their bilingual site, English and Persian, around two jobs: explain what the studio does, and let the work speak. The project portfolio is content-managed, so the studio adds new work without touching code.",
+        "LOG Studio is an advertising agency in Tehran that provides a range of creative and visual services to brands. I designed and built their bilingual website in Persian and English to clearly present their services and showcase their work. The portfolio is content-managed, allowing the team to easily add and update projects without touching the code.",
       sections: [
         {
           heading: "Homepage",
@@ -204,11 +262,11 @@ export const projects: Project[] = [
           ],
           images: [
             {
-              src: "/images/projects/log-studio-home.jpg",
-              alt: "LOG Studio homepage in full: wordmark hero, showreel, studio intro, client logos and the services section.",
-              caption: "Homepage: hero through to the service catalog",
+              src: "/images/projects/log-studio-menu.jpg",
+              alt: "The same page with the services menu open: the five disciplines listed beside the wordmark, the one under the cursor picked out in blue.",
+              caption: "The services menu, opened beside the wordmark",
               width: 1500,
-              height: 6293,
+              height: 842,
             },
           ],
         },
@@ -220,10 +278,10 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/log-studio-services.jpg",
-              alt: "LOG Studio services section on a deep blue gradient, with a sticky service index beside stacked service cards.",
-              caption: "Services: sticky index against stacked cards",
+              alt: "The LOG Studio services section on a deep blue gradient: the five disciplines listed down the left with the current one lit, beside tall cards that each carry a photograph and a paragraph.",
+              caption: "Services: the index on the left tracks whichever card you are on",
               width: 1500,
-              height: 2784,
+              height: 874,
             },
           ],
         },
@@ -235,10 +293,10 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/log-studio-project.jpg",
-              alt: "A LOG Studio project page: title, service tags and credits above a mixed-size black-and-white photo grid.",
-              caption: "Project page: credits above a content-managed photo grid",
-              width: 1400,
-              height: 2800,
+              alt: "A LOG Studio project page end to end: the project title and the disciplines it used on the left, a credits block naming the director, videographers and photographers on the right, then a video still and an uneven grid of photographs from the event, and at the foot a row of similar projects.",
+              caption: "A project page end to end: credits, a content-managed photo grid, then similar projects",
+              width: 1500,
+              height: 3184,
             },
           ],
         },
@@ -247,20 +305,11 @@ export const projects: Project[] = [
           body: [
             "The studio's story, the people behind the work, and the numbers: published projects, disciplines, years working. It closes on a single clear call to action.",
           ],
-          images: [
-            {
-              src: "/images/projects/log-studio-about.jpg",
-              alt: "LOG Studio about page: studio story, a row of team member cards, headline statistics and a contact call to action.",
-              caption: "About: story, team, numbers and a single CTA",
-              width: 1500,
-              height: 1743,
-            },
-          ],
         },
         {
           heading: "Building it",
           body: [
-            "Information architecture and UI in Figma, then built with Next.js and Supabase using AI-assisted development. Both languages were designed together rather than one being a translation of the other.",
+            "Information architecture and UI design, then built with Next.js and Supabase using AI-assisted development. Both languages were designed together rather than one being a translation of the other.",
           ],
         },
       ],
@@ -273,21 +322,15 @@ export const projects: Project[] = [
     year: "2024",
     status: "concept",
     context: "Team of 5",
-    role: "Product Designer, UX/UI & Interaction Design",
-    stack: ["Figma", "UX Research", "Interaction Design"],
+    role: "UI/UX Designer",
+    stack: ["UX Research", "Interaction Design"],
     summary:
       "A web-based platform that simplifies discovering, comparing, and booking coworking spaces for freelancers, remote workers, and small teams.",
     highlight:
       "In a team of five I ran competitor analysis, built the initial wireframes, and designed the search experience, the authentication flow, and the booking-management dashboard.",
-    cover: {
-      src: "/images/projects/worknest-cover.jpg",
-      alt: "Worknest homepage: hero with a workspace-type selector and a location and date search bar.",
-      width: 1800,
-      height: 1124,
-    },
     caseStudy: {
       intro:
-        "Worknest is a web-based platform designed to simplify the process of discovering, comparing, and booking coworking spaces. The goal was a seamless, intuitive booking experience for freelancers, remote workers, and small teams.",
+        "Worknest is a conceptual web based platform designed to simplify the process of discovering, comparing, and booking coworking spaces. This project was developed collaboratively as a team concept, with a focus on creating a seamless and intuitive booking experience for freelancers, remote workers, and small teams.",
       sections: [
         {
           heading: "Problem",
@@ -319,8 +362,8 @@ export const projects: Project[] = [
               src: "/images/projects/worknest-home.jpg",
               alt: "Worknest homepage, full length: hero search, popular spaces, hot desk and meeting room sections.",
               caption: "Homepage: search, category navigation and popular spaces",
-              width: 603,
-              height: 1800,
+              width: 1429,
+              height: 2599,
             },
           ],
         },
@@ -334,15 +377,6 @@ export const projects: Project[] = [
           heading: "Information-rich cards",
           body: [
             "Each workspace is presented as a card carrying price per day, location, rating and essential amenities such as Wi-Fi and parking. Users compare options at a glance, without opening multiple pages.",
-          ],
-          images: [
-            {
-              src: "/images/projects/worknest-cards.jpg",
-              alt: "Two workspace card layouts, each showing photo, price, location, rating and amenity tags.",
-              caption: "Comparison cards in grid and list layouts",
-              width: 1616,
-              height: 1800,
-            },
           ],
         },
         {
@@ -361,8 +395,8 @@ export const projects: Project[] = [
               src: "/images/projects/worknest-filters.jpg",
               alt: "Worknest search results page with a filter sidebar and a list of workspace results.",
               caption: "Search results with persistent filtering",
-              width: 835,
-              height: 1800,
+              width: 1500,
+              height: 3234,
             },
           ],
         },
@@ -408,7 +442,7 @@ export const projects: Project[] = [
     status: "concept",
     context: "UX Research",
     role: "UX Researcher",
-    stack: ["Figma", "User Interviews", "Survey", "IA"],
+    stack: ["User Interviews", "Survey", "IA"],
     summary:
       "A concept app that lets people capture ideas in multiple formats and discover inspiration in one place.",
     highlight:
@@ -455,7 +489,7 @@ export const projects: Project[] = [
               alt: "Affinity board of colour-coded interview responses, one column per participant.",
               caption: "Interview responses organised by participant and question",
               width: 1800,
-              height: 1604,
+              height: 1345,
             },
           ],
         },
@@ -487,36 +521,11 @@ export const projects: Project[] = [
         {
           heading: "Personas",
           body: ["Two personas were created based on the patterns found in research."],
-          images: [
-            {
-              src: "/images/projects/idea-soup-personas.jpg",
-              alt: "Persona boards covering personal info, personality sliders, behaviours, wants and needs, and pain points.",
-              caption: "Personas: behaviours, wants and needs, pain points",
-              width: 1800,
-              height: 680,
-            },
-          ],
         },
         {
           heading: "User journey",
           body: [
             "Mapping the user journey helped identify the friction points in capturing and revisiting ideas.",
-          ],
-          images: [
-            {
-              src: "/images/projects/idea-soup-journey.jpg",
-              alt: "User journey map plotting emotion across the stages of capturing and revisiting an idea.",
-              caption: "Journey map: persona one",
-              width: 1800,
-              height: 973,
-            },
-            {
-              src: "/images/projects/idea-soup-journey-2.jpg",
-              alt: "Second user journey map, tracking the other persona through the same stages.",
-              caption: "Journey map: persona two",
-              width: 1800,
-              height: 975,
-            },
           ],
         },
         {
@@ -527,10 +536,10 @@ export const projects: Project[] = [
           images: [
             {
               src: "/images/projects/idea-soup-red-routes.jpg",
-              alt: "Red route matrix plotting task frequency against how many users perform each task.",
+              alt: "The red routes matrix: how often a task is used down one axis, how many people use it along the other, with the tasks placed in the cells and the most critical ones starred.",
               caption: "Red routes: frequency against reach",
-              width: 1800,
-              height: 1656,
+              width: 1716,
+              height: 1542,
             },
           ],
         },
@@ -550,13 +559,41 @@ export const projects: Project[] = [
         {
           heading: "Low-fidelity wireframes",
           body: ["Five low-fidelity wireframes were created, focused on the core user flows."],
-          images: [
+          screens: [
             {
-              src: "/images/projects/idea-soup-wireframes.jpg",
-              alt: "Five low-fidelity mobile wireframes covering capture, interests, features, onboarding and sign-in.",
-              caption: "Five wireframes covering the core flows",
-              width: 1800,
-              height: 689,
+              src: "/images/projects/idea-soup-wf-home.jpg",
+              alt: "Wireframe of the Idea Soup home screen: saved ideas stacked as cards, each marked with the kind of thing it holds, a photo, a note or a voice recording, over a four-item bottom bar.",
+              caption: "Home: saved ideas as cards",
+              width: 700,
+              height: 1518,
+            },
+            {
+              src: "/images/projects/idea-soup-wf-capabilities.jpg",
+              alt: "Onboarding wireframe listing what the app can do, one claim per row, under a progress bar.",
+              caption: "What the app can do",
+              width: 700,
+              height: 1518,
+            },
+            {
+              src: "/images/projects/idea-soup-wf-interests.jpg",
+              alt: "Onboarding wireframe asking the reader to pick at least three interests, shown as a searchable grid of labelled tiles.",
+              caption: "Pick at least three interests",
+              width: 700,
+              height: 1518,
+            },
+            {
+              src: "/images/projects/idea-soup-wf-name.jpg",
+              alt: "Onboarding wireframe asking what to call the reader, with a single name field and a continue button.",
+              caption: "What should we call you?",
+              width: 700,
+              height: 1518,
+            },
+            {
+              src: "/images/projects/idea-soup-wf-auth.jpg",
+              alt: "Opening wireframe: an illustration placeholder above a sign in button and a register button.",
+              caption: "Sign in or register",
+              width: 700,
+              height: 1518,
             },
           ],
         },

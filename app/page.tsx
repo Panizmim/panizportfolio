@@ -17,14 +17,17 @@ export default function HomePage() {
         {/* Portrait beside the opener; the heading stacks name over role. */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8 lg:gap-10">
           <Reveal className="shrink-0">
-            <Image
-              src={site.portrait.src}
-              alt={site.portrait.alt}
-              width={600}
-              height={600}
-              priority
-              className="h-28 w-28 border border-rule object-cover sm:h-36 sm:w-36 lg:h-44 lg:w-44"
-            />
+            {/* 4:5 frame, cropped from the top so the face never loses its crown. */}
+            <div className="relative aspect-[4/5] w-28 overflow-hidden border border-rule sm:w-36 lg:w-44">
+              <Image
+                src={site.portrait.src}
+                alt={site.portrait.alt}
+                fill
+                sizes="(min-width: 1024px) 11rem, (min-width: 640px) 9rem, 7rem"
+                priority
+                className="object-cover object-top"
+              />
+            </div>
           </Reveal>
 
           <h1 className="font-display text-[clamp(1.75rem,4.4vw,3.25rem)] font-bold leading-[1.12] tracking-tight">
@@ -59,7 +62,7 @@ export default function HomePage() {
       {/* -------------------------------------------------------- Selected Work */}
       <Shell as="section" id="work" className="scroll-mt-24">
         <SectionHeading label="Selected Work" note={`${projects.length} projects`} />
-        <ul className="grid gap-x-10 gap-y-16 py-12 md:grid-cols-2 lg:gap-x-14 lg:py-16">
+        <ul className="grid gap-x-4 gap-y-12 py-12 sm:grid-cols-2 lg:py-16 xl:grid-cols-4">
           {projects.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
           ))}
@@ -71,7 +74,7 @@ export default function HomePage() {
         <SectionHeading label="About / How I Work" note="Architecture → Product" />
         <div className="grid gap-10 py-12 md:grid-cols-12 lg:py-20">
           <div className="md:col-span-8 lg:col-span-7">
-            <Reveal as="p" className="font-display text-[clamp(1.375rem,2.6vw,2rem)] font-bold leading-[1.25] tracking-tight">
+            <Reveal as="p" className="font-display text-[clamp(1rem,1.5vw,1.25rem)] font-bold leading-[1.45] tracking-tight">
               {site.about}
             </Reveal>
           </div>
@@ -99,11 +102,11 @@ export default function HomePage() {
         <SectionHeading label="Say Hello" />
         <div className="grid gap-10 py-12 md:grid-cols-12 lg:py-20">
           <div className="md:col-span-8 lg:col-span-7">
-            <Reveal as="p" className="font-display text-[clamp(2.25rem,6vw,4.5rem)] font-bold leading-[1.02] tracking-tight">
+            <Reveal as="p" className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold leading-[1.1] tracking-tight">
               Contact me
             </Reveal>
             <Reveal delay={110} className="mt-6 max-w-lg" as="p">
-              <span className="text-base leading-relaxed text-muted sm:text-lg">
+              <span className="text-[14.5px] leading-[1.6] text-muted">
                 I&rsquo;m always open to hearing about new projects, ideas, or
                 collaborations. If you&rsquo;re building something that needs structure
                 as much as it needs polish, send me a note.

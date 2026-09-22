@@ -55,7 +55,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
+      <head>
+        {/*
+          Runs before the first paint. Only an explicit choice is replayed here;
+          with nothing stored the CSS media query in globals.css decides, so a
+          first visit still follows the system. `suppressHydrationWarning` above
+          is because this writes to <html> before React hydrates.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}",
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {/* Skip link — first thing a keyboard or screen-reader user meets. */}
         <a

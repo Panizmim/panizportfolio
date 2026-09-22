@@ -2,6 +2,7 @@ import Link from "next/link";
 import { nav, site } from "@/content/site";
 import { Shell } from "./Shell";
 import { Arrow } from "./Arrow";
+import { ThemeToggle } from "./ThemeToggle";
 
 /** Stacked name on the left, anchors on the right, hairline underneath. */
 export function Header() {
@@ -25,32 +26,36 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Primary">
-          <ul className="flex items-center gap-3 sm:gap-7">
-            {items.map((item) => {
-              const external = "external" in item && item.external;
-              return (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    {...(external
-                      ? { target: "_blank", rel: "noreferrer noopener" }
-                      : {})}
-                    className="inline-flex items-center gap-1 whitespace-nowrap font-display text-xs sm:text-sm"
-                  >
-                    <span className="link-rule">{item.label}</span>
-                    {external ? (
-                      <>
-                        <Arrow className="hidden -rotate-45 sm:block" />
-                        <span className="sr-only">(opens in a new tab)</span>
-                      </>
-                    ) : null}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <nav aria-label="Primary">
+            <ul className="flex items-center gap-3 sm:gap-7">
+              {items.map((item) => {
+                const external = "external" in item && item.external;
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      {...(external
+                        ? { target: "_blank", rel: "noreferrer noopener" }
+                        : {})}
+                      className="inline-flex items-center gap-1 whitespace-nowrap font-display text-xs sm:text-sm"
+                    >
+                      <span className="link-rule">{item.label}</span>
+                      {external ? (
+                        <>
+                          <Arrow className="hidden -rotate-45 sm:block" />
+                          <span className="sr-only">(opens in a new tab)</span>
+                        </>
+                      ) : null}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <ThemeToggle />
+        </div>
       </Shell>
     </header>
   );

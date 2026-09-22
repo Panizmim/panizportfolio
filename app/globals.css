@@ -20,17 +20,37 @@
   --ink: rgb(var(--ink-rgb));
   --rule: rgb(var(--rule-rgb));
   --accent: rgb(var(--accent-rgb));
+  color-scheme: light;
 }
 
+/**
+ * Dark mode runs two ways, and the values are written twice on purpose.
+ *
+ *   1. The system preference, which is what a first visit gets.
+ *   2. `data-theme` on <html>, set by the header toggle and remembered in
+ *      localStorage. `:not([data-theme="light"])` above is what lets an
+ *      explicit "light" win back on a machine that is set to dark.
+ */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper-rgb: 14 14 12;
     --ink-rgb: 244 244 236;
     --muted-rgb: 138 138 133;
     --rule-rgb: 38 38 34;
     --accent-rgb: 242 100 58; /* lifted so it still passes contrast on dark paper */
     --grain: 0.07;
+    color-scheme: dark;
   }
+}
+
+:root[data-theme="dark"] {
+    --paper-rgb: 14 14 12;
+    --ink-rgb: 244 244 236;
+    --muted-rgb: 138 138 133;
+    --rule-rgb: 38 38 34;
+    --accent-rgb: 242 100 58; /* lifted so it still passes contrast on dark paper */
+    --grain: 0.07;
+    color-scheme: dark;
 }
 
 @layer base {
@@ -90,6 +110,28 @@
   .btn svg { @apply transition-transform duration-300; }
   .btn:hover svg { transform: translateX(3px); }
 
+  /* Scrolls, but shows no scrollbar. Used on the case study's left column and
+     on the tall-image frames, where the chrome cuts across the layout. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* The toggle shows the theme you would switch to. Keyed off the same two
+     states as the tokens above, so it never disagrees with the page. */
+  .theme-moon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-sun { display: none; }
+    :root:not([data-theme="light"]) .theme-moon { display: block; }
+  }
+  :root[data-theme="dark"] .theme-sun { display: none; }
+  :root[data-theme="dark"] .theme-moon { display: block; }
+  :root[data-theme="light"] .theme-sun { display: block; }
+  :root[data-theme="light"] .theme-moon { display: none; }
+
   /* Link with an underline that wipes in from the left. */
   .link-rule {
     @apply relative inline-block transition-colors duration-200 hover:text-accent;
@@ -144,6 +186,14 @@
 .card-media { transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1); }
 .group:hover .card-media { transform: scale(1.03); }
 
+/* Covers sit in black and white and take their colour back on hover. */
+.cover-tone {
+  filter: grayscale(1);
+  transition: filter 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .cover-tone,
+.group:focus-within .cover-tone { filter: grayscale(0); }
+
 /* Paper grain, fixed over the whole page. */
 .grain {
   position: fixed;
@@ -167,6 +217,7 @@
     transform: none !important;
     transition: none !important;
   }
+  .cover-tone { transition: none !important; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
