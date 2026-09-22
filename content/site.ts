@@ -17,6 +17,21 @@ export const site = {
   email: "Panizmolamohamad@gmail.com",
   /** Shown in the footer beside the viewer's local time. */
   location: "Tehran",
+  /**
+   * CV, opened in a new tab from the nav.
+   *
+   * REPLACE THIS with your own Google Doc link. Two things matter:
+   *   1. Share the doc as "Anyone with the link -> Viewer", or visitors hit a
+   *      permission wall and the link is worse than useless.
+   *   2. Prefer the /preview form over /edit. /preview shows the document with
+   *      no Google editing chrome and no sign-in prompt. Swap /edit (and
+   *      anything after it) for /preview in the URL you copy from the address
+   *      bar. To hand over a PDF download instead, use
+   *      /export?format=pdf in place of /preview.
+   *
+   * Set it to an empty string to drop Resume from the nav entirely.
+   */
+  resumeUrl: "https://docs.google.com/document/d/REPLACE_WITH_YOUR_DOC_ID/preview",
   links: [
     { label: "Email", href: "mailto:Panizmolamohamad@gmail.com", value: "Panizmolamohamad@gmail.com" },
     {
@@ -48,4 +63,6 @@ export const nav = [
   { label: "Work", href: "/#work" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
+  // External links open in a new tab and get a small outbound arrow.
+  { label: "Resume", href: site.resumeUrl, external: true },
 ] as const;

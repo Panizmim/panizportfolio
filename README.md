@@ -15,11 +15,17 @@ Everything you'll want to change lives in two files — no component edits neede
 
 | File | What's in it |
 | --- | --- |
-| `content/site.ts` | Name, role, hero intro, About copy, contact links, site URL |
+| `content/site.ts` | Name, role, hero intro, About copy, contact links, site URL, resume link |
 | `content/projects.ts` | All four projects, in display order |
 
 **Before deploying:** set `site.url` in `content/site.ts` to your real domain. It drives
 canonical URLs, Open Graph tags and `sitemap.xml`.
+
+**Resume link.** `site.resumeUrl` is what the nav's Resume item points at. Share the Google
+Doc as *Anyone with the link → Viewer* first, or the link fails for everyone but you. Use the
+`/preview` form of the URL rather than `/edit` — it renders the document with no editing
+chrome and no sign-in prompt. Setting `resumeUrl` to an empty string removes Resume from the
+nav.
 
 ### Adding a project
 
