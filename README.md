@@ -81,7 +81,9 @@ They're stored as RGB triplets (`--ink-rgb: 14 14 12`) so Tailwind opacity modif
 
 - **Paper** `#FDFDF7` · **Ink** `#0E0E0C` · **Muted** `#8F8F8C` · **Accent** persimmon `#D4491F`
 - Dark mode is automatic via `prefers-color-scheme`, with a lifted accent for contrast
-- **Space Grotesk** for headings, **IBM Plex Sans** for body (self-hosted by `next/font`)
+- **Poppins** throughout, self-hosted from `app/fonts` via `next/font/local`
+  (SIL Open Font License — `app/fonts/OFL.txt`). Only the four weights the site uses are
+  bundled: 400, 500, 600, 700. To add one, drop the `.woff2` in and list it in `app/layout.tsx`
 - A fixed SVG paper grain sits over the page (`.grain`); tune it with `--grain`
 - Reusable classes: `.label` (small uppercase metadata), `.chip` (outlined pill),
   `.btn` (pill button with arrow), `.link-rule` (wipe-in underline),

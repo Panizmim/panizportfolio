@@ -1,24 +1,31 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { site } from "@/content/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
-// Two families, no more: geometric sans for headings, humanist sans for body.
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-display",
+/**
+ * Poppins, self-hosted from app/fonts (SIL Open Font License — see OFL.txt).
+ * One family across the whole site: --font-display and --font-body both point
+ * at it, so headings and body stay on the same type while the two variables
+ * remain separate if you ever want to split families again.
+ *
+ * Only the four weights the site uses are bundled. If you need another, add the
+ * .woff2 next to these and list it here.
+ */
+const poppins = localFont({
+  src: [
+    { path: "./fonts/Poppins-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Poppins-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Poppins-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/Poppins-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-poppins",
   display: "swap",
-});
-
-const body = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-body",
-  display: "swap",
+  // Trims the flash of unstyled text by matching the fallback's metrics.
+  adjustFontFallback: "Arial",
 });
 
 export const metadata: Metadata = {
@@ -48,7 +55,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={poppins.variable}>
       <body className="font-sans antialiased">
         {/* Skip link — first thing a keyboard or screen-reader user meets. */}
         <a
