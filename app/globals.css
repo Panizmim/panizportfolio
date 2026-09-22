@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Palette: warm paper, near-black ink, one persimmon accent used sparingly.
+ * Everything else stays quiet so the typography and grain carry the page.
+ */
+:root {
+  /* RGB triplets so Tailwind can apply opacity modifiers (text-ink/80). */
+  --paper-rgb: 253 253 247;
+  --ink-rgb: 14 14 12;
+  --muted-rgb: 143 143 140;
+  --rule-rgb: 227 227 217;
+  --accent-rgb: 212 73 31;
+  --grain: 0.05;
+
+  /* Direct forms, for use in plain CSS below. */
+  --paper: rgb(var(--paper-rgb));
+  --ink: rgb(var(--ink-rgb));
+  --rule: rgb(var(--rule-rgb));
+  --accent: rgb(var(--accent-rgb));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-rgb: 14 14 12;
+    --ink-rgb: 244 244 236;
+    --muted-rgb: 138 138 133;
+    --rule-rgb: 38 38 34;
+    --accent-rgb: 242 100 58; /* lifted so it still passes contrast on dark paper */
+    --grain: 0.07;
+  }
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 6rem;
+  }
+
+  /* Lenis drives scrolling; it needs native smooth scrolling off. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--ink);
+    color: var(--paper);
+  }
+}
+
+@layer components {
+  .rule-t { border-top: 1px solid var(--rule); }
+  .rule-b { border-bottom: 1px solid var(--rule); }
+
+  /* Small uppercase metadata type. */
+  .label {
+    @apply font-display text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-muted;
+  }
+
+  /* Outlined pill — tool tags and small buttons. */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-rule px-3 py-1.5
+           font-sans text-[0.8125rem] leading-none text-ink/80;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2.5 rounded-full border border-ink/25 px-5 py-2.5
+           font-display text-sm transition-colors duration-300
+           hover:border-ink hover:bg-ink hover:text-paper;
+  }
+  /* The arrow nudges forward on hover. */
+  .btn svg { @apply transition-transform duration-300; }
+  .btn:hover svg { transform: translateX(3px); }
+
+  /* Link with an underline that wipes in from the left. */
+  .link-rule {
+    @apply relative inline-block transition-colors duration-200 hover:text-accent;
+  }
+  .link-rule::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-rule:hover::after,
+  .link-rule:focus-visible::after { transform: scaleX(1); }
+}
+
+/* ---------------------------------------------------------------- Motion
+ * One reveal primitive, used everywhere: fade up out of a soft blur.
+ * `data-reveal` starts hidden; the observer sets data-shown to play it.
+ * --stagger delays a child within a group.
+ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.15rem);
+  filter: blur(6px);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--stagger, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+[data-reveal][data-shown="true"] {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Cover images settle from a slight zoom as they come in. */
+.cover-media {
+  transform: scale(1.06);
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-shown="true"] .cover-media { transform: scale(1); }
+
+/* Hover: the card lifts its image a touch. */
+.card-media { transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1); }
+.group:hover .card-media { transform: scale(1.03); }
+
+/* Paper grain, fixed over the whole page. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: var(--grain);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .cover-media,
+  .card-media {
+    transform: none !important;
+    transition: none !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
