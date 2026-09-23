@@ -328,6 +328,12 @@ export const projects: Project[] = [
       "A web-based platform that simplifies discovering, comparing, and booking coworking spaces for freelancers, remote workers, and small teams.",
     highlight:
       "In a team of five I ran competitor analysis, built the initial wireframes, and designed the search experience, the authentication flow, and the booking-management dashboard.",
+    cover: {
+      src: "/images/projects/worknest-cover.jpg",
+      alt: "The Worknest home page in a browser mockup: the hero headline over a photo of a coworking lounge, a booking search bar, and the Popular Spaces row.",
+      width: 1140,
+      height: 1318,
+    },
     caseStudy: {
       intro:
         "Worknest is a conceptual web based platform designed to simplify the process of discovering, comparing, and booking coworking spaces. This project was developed collaboratively as a team concept, with a focus on creating a seamless and intuitive booking experience for freelancers, remote workers, and small teams.",
@@ -448,10 +454,10 @@ export const projects: Project[] = [
     highlight:
       "A full UX research process: semi-structured interviews and an 80-participant survey, carried through personas, journey mapping, red routes, IA and low-fidelity wireframes.",
     cover: {
-      src: "/images/projects/idea-soup-cover.jpg",
-      alt: "Three Idea Soup low-fidelity wireframe screens: capture options, interest picker and feature overview.",
-      width: 1800,
-      height: 1126,
+      src: "/images/projects/idea-soup-cover-interviews.jpg",
+      alt: "Affinity board from the Idea Soup interviews: three participant columns of colour-coded sticky notes under their headings.",
+      width: 1400,
+      height: 1618,
     },
     caseStudy: {
       intro:
