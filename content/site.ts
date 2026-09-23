@@ -52,7 +52,7 @@ export const site = {
    *
    * Set it to an empty string to drop Resume from the nav entirely.
    */
-  resumeUrl: "https://docs.google.com/document/d/REPLACE_WITH_YOUR_DOC_ID/preview",
+  resumeUrl: "https://docs.google.com/document/d/1UAfHO-aG-Khk06qW-F5kOzi4Nk3e4YXHkJc-KqxCkjc/preview",
   links: [
     { label: "Email", href: "mailto:Panizmolamohamad@gmail.com", value: "Panizmolamohamad@gmail.com" },
     {

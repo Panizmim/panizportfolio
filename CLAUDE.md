@@ -177,9 +177,10 @@ are in Persian inside English case-study copy — that is known, not a bug.
 
 ## Still open
 
-1. `site.resumeUrl` — still `REPLACE_WITH_YOUR_DOC_ID`. The Google Doc must be
-   shared as *Anyone with the link → Viewer*, and the URL should use `/preview`
-   rather than `/edit`. Setting it to an empty string removes Resume from the nav.
+1. `site.resumeUrl` points at Paniz's CV doc and the nav link works. Two things
+   keep it working: the doc stays shared as *Anyone with the link → Viewer*, and
+   the URL keeps the `/preview` form rather than `/edit`. Setting it to an empty
+   string removes Resume from the nav.
 2. `site.url` resolves itself and needs no edit to deploy: `NEXT_PUBLIC_SITE_URL`
    if set, else the Vercel project's production domain, else localhost. Set the
    env var only once a bought domain points at the project.
