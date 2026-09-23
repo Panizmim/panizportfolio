@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
@@ -50,9 +49,6 @@ export default function HomePage() {
         </Reveal>
 
         <Reveal delay={550} className="mt-10 flex flex-wrap items-center gap-3">
-          <Link href="/#work" className="btn">
-            Selected work <Arrow />
-          </Link>
           <a href={`mailto:${site.email}`} className="btn">
             Get in touch <Arrow />
           </a>
